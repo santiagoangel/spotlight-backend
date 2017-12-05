@@ -40,7 +40,7 @@ public class GreetingControllerTests {
     public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
         this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Saludos, Spotlight"));
+                .andExpect(jsonPath("$.content").value("Saludos, Spotlight!"));
     }
 
     @Test
