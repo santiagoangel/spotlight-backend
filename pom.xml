@@ -3,9 +3,32 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.springframework</groupId>
-    <artifactId>gs-rest-service</artifactId>
+    <groupId>com.openshift</groupId>
+    <artifactId>spotlight-backend</artifactId>
     <version>0.1.0</version>
+    <packaging>jar</packaging>
+    
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<!-- Sección con la url de Nexus -->
+		<nexus.url>https://http://nexus-spotlight-infra.b9ad.pro-us-east-1.openshiftapps.com</nexus.url>
+	</properties>
+	
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Repositorio de releases</name>
+			<url>${nexus.url}/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Repositorio de snapshots</name>
+			<url>${nexus.url}/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -29,10 +52,8 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+    
+    
 
 
     <build>
