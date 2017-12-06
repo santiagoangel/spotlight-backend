@@ -13,7 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<!-- Sección con la url de Nexus -->
-		<nexus.url>https://http://nexus-spotlight-infra.b9ad.pro-us-east-1.openshiftapps.com</nexus.url>
+		<nexus.url>https://nexus-secure-spotlight-infra.b9ad.pro-us-east-1.openshiftapps.com</nexus.url>
 	</properties>
 	
 	<distributionManagement>
@@ -29,6 +29,7 @@
 			<url>${nexus.url}/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
 
     <parent>
         <groupId>org.springframework.boot</groupId>
