@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RestController
 public class GreetingController {
 
-    private static final String template = "Hi, %s!";
+    private static final String TEMPLATE = "Hi, %s!";
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/greeting")
     @CrossOrigin(origins = "*")
     public Greeting greeting(@RequestParam(value="name", defaultValue="Bank customer") String name) {
         return new Greeting(counter.incrementAndGet(),
-                            String.format(template, name));
+                            String.format(TEMPLATE, name));
     }
 }
